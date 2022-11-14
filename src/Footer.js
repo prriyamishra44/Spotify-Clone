@@ -1,4 +1,4 @@
-import React,{ useEffect, } from "react";
+import React,{ useEffect } from "react";
 import "./Footer.css";
 import { useDataLayerValue } from "./DataLayer";
 import PlayCircleOutlineOutlinedIcon from "@mui/icons-material/PlayCircleOutlineOutlined";
@@ -13,7 +13,8 @@ import VolumeDownIcon from "@mui/icons-material/VolumeDown";
 
 
 function Footer({spotify}) {
-  const [{token, item, playing}, dispatch] =useDataLayerValue();
+  const [{item, playing}, dispatch] =useDataLayerValue();
+  
   useEffect(()=>{
     spotify.getMyCurrentPlaybackState().then((r)=>{
       console.log(r);

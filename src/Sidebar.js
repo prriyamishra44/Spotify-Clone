@@ -4,19 +4,18 @@ import SidebarOption from "./SidebarOption";
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
-// import { getTokenFromResponse } from "./spotify";
 import { useDataLayerValue } from "./DataLayer";
 
 
 function Sidebar() {
-  const[{playlists}, dispatch] = useDataLayerValue();
+  const[{playlists}] = useDataLayerValue();
 
   return (
     <div className='sidebar'>
       <img 
       className="sidebar__logo"
-      src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
-      alt=""/>
+      src="https://music-b26f.kxcdn.com/wp-content/uploads/2017/06/635963274692858859903160895_spotify-logo-horizontal-black.jpg"
+      alt="Spotify logo"/>
       <SidebarOption Icon={HomeIcon} title ="Home"/>
       <SidebarOption Icon={SearchIcon} title ="Search"/>
       <SidebarOption Icon={LibraryMusicIcon} title ="Your Library"/>
@@ -31,5 +30,5 @@ function Sidebar() {
   )
 }
 
-export default Sidebar
+export default Sidebar;
 

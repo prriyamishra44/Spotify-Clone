@@ -2,7 +2,7 @@
 
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 
-const redirectUrl = "https://prriyamishra44.github.io/Spotify-Clone/";
+const redirectUri = "http://localhost:3000/";
 const clientId = "1b4ad3a9ed2f4ef49db24d111acfd461";
 
 const scopes = [
@@ -13,7 +13,7 @@ const scopes = [
   "user-modify-playback-state",
 ];
 
-export const getTokenFromResponse = ()=>{
+export const getTokenFromUrl = ()=>{
     return window.location.hash
     .substring(1)
     .split("&")
@@ -26,6 +26,6 @@ export const getTokenFromResponse = ()=>{
     }, {})
 }
 
-export const accessUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUrl}&scope=${scopes.join(
+export const loginUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
   "%20"
 )}&response_type=token&show_dialog=true`;
